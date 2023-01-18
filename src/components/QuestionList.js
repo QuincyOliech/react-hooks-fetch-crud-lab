@@ -1,11 +1,11 @@
 import React  from "react";
 import QuestionItem from "./QuestionItem";
 
-function QuestionList({data}) {
+function QuestionList({data,removeQuestion,updateQuestion}) {
   // map method for looping through the questions array
   const questionArray=data.map((question)=>{
     return (
-          <QuestionItem key={question.id} question={question}/>
+          <QuestionItem updateQuestion={updateQuestion} removeQuestion={removeQuestion} key={question.id} question={question}/>
     )
 
   })
