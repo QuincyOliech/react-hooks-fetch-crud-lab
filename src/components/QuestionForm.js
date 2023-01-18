@@ -19,8 +19,20 @@ function QuestionForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(formData);
+    // function to post data to the json file
+  
+    fetch("http://localhost:4000/questions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(formData),
+  })
+    .then((r) => r.json())
+    .then((data) => setFormData(data));
   }
+    
 
   return (
     <section>
