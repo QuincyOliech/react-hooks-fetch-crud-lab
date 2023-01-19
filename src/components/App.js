@@ -27,8 +27,7 @@ function App() {
    
   }
   function updateQuestion(newQuestion,id){
-    console.log(data)
-    console.log(newQuestion)
+
    setData(data.map((question)=>{
     if(question.id===id){
       return newQuestion
@@ -36,9 +35,9 @@ function App() {
       return question
     }
   }))
-  console.log(data)
+  
   }
-  console.log(data)
+ 
   return (
     <main>
       <AdminNavBar onChangePage={setPage} />
